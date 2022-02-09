@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.api_sample_flutter">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
    <application
         android:label="api_sample_flutter"
         android:name="${applicationName}"

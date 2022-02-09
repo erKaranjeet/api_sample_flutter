@@ -1,3 +1,4 @@
+import 'package:api_sample_flutter/connections/data_response.dart';
 import 'package:api_sample_flutter/models/sample_model.dart';
 
 abstract class SampleContractView {
@@ -19,7 +20,7 @@ abstract class SamplePresenter {
 
 abstract class OnSampleCompleteListener {
 
-  void onSuccessSampleListener(List<SampleModel> list);
+  void onSuccessSampleListener(DataResponse response);
 
   void onError(String error);
 }

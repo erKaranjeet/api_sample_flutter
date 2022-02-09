@@ -1,4 +1,5 @@
 // @dart=2.9
+import 'package:api_sample_flutter/connections/data_response.dart';
 import 'package:api_sample_flutter/connections/injector.dart';
 import 'package:api_sample_flutter/connections/rest_api_client.dart';
 import 'package:api_sample_flutter/models/sample_model.dart';
@@ -10,7 +11,7 @@ class SampleInteractorImpl implements SampleInteractor {
 
   RestApiClient client;
 
-  BrandsIntractorImpl() {
+  SampleInteractorImpl() {
     client = Injector().getClient();
   }
 
@@ -23,7 +24,7 @@ class SampleInteractorImpl implements SampleInteractor {
       return callback.onError("Please check internet connection");
     }
     client.getData().then((it) {
-      List<SampleModel> result = it as List<SampleModel>;
+      DataResponse result = it;
       // if (result.isSuccess && result.data != null) {
         callback.onSuccessSampleListener(result);
       // } else if (result.error != null) {

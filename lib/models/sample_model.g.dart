@@ -8,8 +8,10 @@ part of 'sample_model.dart';
 
 SampleModel _$SampleModelFromJson(Map<String, dynamic> json) => SampleModel(
       id: json['id'] as int?,
-      title: json['title'] as String?,
-      body: json['body'] as String?,
+      year: json['year'] as int?,
+      name: json['name'] as String?,
+      color: json['color'] as String?,
+      pantone_value: json['pantone_value'] as String?,
     );
 
 Map<String, dynamic> _$SampleModelToJson(SampleModel instance) {
@@ -22,7 +24,9 @@ Map<String, dynamic> _$SampleModelToJson(SampleModel instance) {
   }
 
   writeNotNull('id', instance.id);
-  writeNotNull('title', instance.title);
-  writeNotNull('body', instance.body);
+  writeNotNull('year', instance.year);
+  writeNotNull('name', instance.name);
+  writeNotNull('color', instance.color);
+  writeNotNull('pantone_value', instance.pantone_value);
   return val;
 }

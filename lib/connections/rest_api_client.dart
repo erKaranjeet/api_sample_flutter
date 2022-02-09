@@ -1,3 +1,4 @@
+import 'package:api_sample_flutter/connections/data_response.dart';
 import 'package:api_sample_flutter/models/sample_model.dart';
 import 'package:dio/dio.dart';
 
@@ -11,6 +12,6 @@ abstract class RestApiClient {
 
   factory RestApiClient(Dio dio, {String baseUrl}) = _RestApiClient;
 
-  @GET("v2/posts")
-  Future<SampleModel> getData();
+  @GET("api/unknown")
+  Future<DataResponse<SampleModel>> getData();
 }

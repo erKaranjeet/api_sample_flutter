@@ -8,7 +8,7 @@ part of 'rest_api_client.dart';
 
 class _RestApiClient implements RestApiClient {
   _RestApiClient(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://gorest.co.in/public/';
+    baseUrl ??= 'https://reqres.in/';
   }
 
   final Dio _dio;
@@ -16,18 +16,21 @@ class _RestApiClient implements RestApiClient {
   String? baseUrl;
 
   @override
-  Future<SampleModel> getData() async {
+  Future<DataResponse<SampleModel>> getData() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SampleModel>(
+        _setStreamType<DataResponse<SampleModel>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, 'v2/posts',
+                .compose(_dio.options, 'api/unknown',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = SampleModel.fromJson(_result.data!);
+    final value = DataResponse<SampleModel>.fromJson(
+      _result.data!,
+      (json) => SampleModel.fromJson(json as Map<String, dynamic>),
+    );
     return value;
   }
 

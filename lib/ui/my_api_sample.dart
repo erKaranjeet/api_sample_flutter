@@ -45,19 +45,22 @@ class MyApiSampleState extends State<MyApiSample> implements SampleContractView 
       ),
       body: ListView.separated(
           itemBuilder: (BuildContext context, int index) {
+            String col = list[index].color;
+            col = col.replaceAll("#", "0xFF");
+            int colors = int.parse(col);
             return ListTile(
               title: Text(
-                list[index].title,
-                style: const TextStyle(
-                  color: Colors.black,
+                "Name: " + list[index].name,
+                style: TextStyle(
+                  color: Color(colors),
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
                 ),
               ),
               subtitle: Text(
-                list[index].body,
-                style: const TextStyle(
-                  color: Colors.black,
+                "Pantone Value: " + list[index].pantone_value + "\nYear: " + list[index].year.toString(),
+                style: TextStyle(
+                  color: Color(colors),
                   fontSize: 13,
                   fontWeight: FontWeight.w300,
                 ),
