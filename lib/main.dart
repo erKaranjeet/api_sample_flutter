@@ -1,7 +1,13 @@
+import 'package:api_sample_flutter/ui/login_screen.dart';
 import 'package:api_sample_flutter/ui/my_api_sample.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+  //     .then((_) {
+  //   runApp(const MyApp());
+  // });
   runApp(const MyApp());
 }
 
@@ -26,7 +32,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: MyApiSample(),
+      home: LoginScreen(),
     );
   }
 }
