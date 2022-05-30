@@ -13,6 +13,26 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../Iynfluencer/lib/main.dart">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Iynfluencer/lib/ui/login_screen.dart">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Iynfluencer/lib/ui/splash_screen.dart">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Iynfluencer/lib/utils/color_constants.dart">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../Neighbor_Android/app/build.gradle">
           <value>
             <set />
@@ -23,12 +43,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../Neighbor_Android/app/src/main/java/com/swipeby/account/GetOrdersFragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../Neighbor_Android/app/src/main/java/com/swipeby/fragments/RestaurantFragment.java">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../Neighbor_Android/app/src/main/java/com/swipeby/fragments/RestaurantMenuFragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Neighbor_Android/app/src/main/java/com/swipeby/fragments/ShoppingFragment.java">
           <value>
             <set />
           </value>
@@ -69,6 +99,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../Neighbor_Restaurant_App/app/src/main/java/com/anviam/neighbours/activity/HomeActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Neighbor_Restaurant_App/app/src/main/java/com/anviam/neighbours/completeOrder/CompleteOrderDetailFragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Neighbor_Restaurant_App/app/src/main/java/com/anviam/neighbours/printer/util/PrinterTemplate.java">
           <value>
             <set />
           </value>
