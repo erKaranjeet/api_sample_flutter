@@ -1,8 +1,10 @@
-// @dart=2.9
 import 'dart:ui';
 
 import 'package:api_sample_flutter/models/home_menus_model.dart';
+import 'package:api_sample_flutter/ui/drawersUI/drawer_screen_four.dart';
 import 'package:api_sample_flutter/ui/drawersUI/drawer_screen_one.dart';
+import 'package:api_sample_flutter/ui/drawersUI/drawer_screen_three.dart';
+import 'package:api_sample_flutter/ui/drawersUI/drawer_screen_two.dart';
 import 'package:flutter/material.dart';
 
 const List<HomeMenusModel> choiceMenus = <HomeMenusModel>[
@@ -79,18 +81,25 @@ class HomeScreenState extends State<StatefulWidget> {
   void ItemClicked(int index) {
     if (index == 0) {
       Navigator.push(context, MaterialPageRoute(builder: (context) => DrawerScreenOne()));
+    } else if (index == 1) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => DrawerScreenTwo()));
+    } else if (index == 2) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => DrawerScreenThree()));
+    } else if (index == 3) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => DrawerScreenFour()));
     }
   }
 }
 
 class SelectCard extends StatelessWidget {
-  SelectCard({Key key, this.choiceMenu}) : super(key: key);
+
+  SelectCard({required this.choiceMenu});
 
   HomeMenusModel choiceMenu;
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle style = Theme.of(context).textTheme.subtitle1;
+    final TextStyle? style = Theme.of(context).textTheme.titleMedium;
 
     return Card(
       color: Colors.white.withOpacity(0.5),
@@ -102,13 +111,13 @@ class SelectCard extends StatelessWidget {
                 child: Icon(
                   choiceMenu.icon,
                   size: 40.0,
-                  color: style.color,
+                  color: style?.color,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Text(
-                  choiceMenu.name,
+                  choiceMenu.name!,
                   style: style,
                 ),
               ),

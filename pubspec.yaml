@@ -39,6 +39,7 @@ dependencies:
   json_annotation: ^4.3.0
   connectivity: ^3.0.6
   retrofit_generator: ^3.0.0+2
+  simple_animations: ^4.2.0
 
 
 dev_dependencies:
@@ -78,6 +79,7 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/
+    - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

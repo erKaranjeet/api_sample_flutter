@@ -1,4 +1,4 @@
-import 'package:api_sample_flutter/connections/data_response.dart';
+import 'package:api_sample_flutter/connections/responses/data_response.dart';
 import 'package:api_sample_flutter/models/sample_model.dart';
 import 'package:dio/dio.dart';
 

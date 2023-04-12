@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'dart:io';
 
 import 'package:dio/adapter.dart';
@@ -64,9 +63,9 @@ class LoggingInterceptors extends Interceptor {
   void onError(DioError dioError, ErrorInterceptorHandler handler) {
     print(
         "<-- ${dioError.message} ${(dioError.response?.requestOptions != null ?
-        (dioError.response.requestOptions.baseUrl + dioError.response.requestOptions.path) : 'URL')}");
+        ("${dioError.response?.requestOptions.baseUrl}${dioError.response?.requestOptions.path}") : 'URL')}");
     print(
-        "${dioError.response != null ? dioError.response.data : 'Unknown Error'}");
+        "${dioError.response != null ? dioError.response?.data : 'Unknown Error'}");
     print("<-- End error");
     //Manually changed
     // if(dioError.response.statusCode==403)
