@@ -2,6 +2,15 @@
     package="com.example.api_sample_flutter">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Sceneform requires OpenGL ES 3.0 or later. -->
+    <uses-feature android:glEsVersion="0x00030000" android:required="true" />
+
+    <!-- Indicates that app requires ARCore ("AR Required"). Ensures the app is
+     visible only in the Google Play Store on devices that support ARCore.
+     For "AR Optional" apps remove this line. -->
+    <uses-feature android:name="android.hardware.camera.ar" />
 
    <application
         android:label="api_sample_flutter"
@@ -33,5 +42,7 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
+       <meta-data android:name="com.google.ar.core" android:value="required" />
     </application>
 </manifest>

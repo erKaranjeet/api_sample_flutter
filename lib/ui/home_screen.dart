@@ -1,10 +1,16 @@
 import 'dart:ui';
 
 import 'package:api_sample_flutter/models/home_menus_model.dart';
+import 'package:api_sample_flutter/ui/3dUI/neumor_ui_screen.dart';
+import 'package:api_sample_flutter/ui/ai/face_detection_screen.dart';
+import 'package:api_sample_flutter/ui/ar/augmented_reality_screen.dart';
+import 'package:api_sample_flutter/ui/bluetoothConnection/bluetooth_home_screen.dart';
+import 'package:api_sample_flutter/ui/components/range_slider_screen.dart';
 import 'package:api_sample_flutter/ui/drawersUI/drawer_screen_four.dart';
 import 'package:api_sample_flutter/ui/drawersUI/drawer_screen_one.dart';
 import 'package:api_sample_flutter/ui/drawersUI/drawer_screen_three.dart';
 import 'package:api_sample_flutter/ui/drawersUI/drawer_screen_two.dart';
+import 'package:api_sample_flutter/ui/voiceWIthPython/voice_recognizer_with_python.dart';
 import 'package:flutter/material.dart';
 
 const List<HomeMenusModel> choiceMenus = <HomeMenusModel>[
@@ -16,6 +22,7 @@ const List<HomeMenusModel> choiceMenus = <HomeMenusModel>[
   HomeMenusModel(name: 'Setting', icon: Icons.settings),
   HomeMenusModel(name: 'Album', icon: Icons.photo_album),
   HomeMenusModel(name: 'WiFi', icon: Icons.wifi),
+  HomeMenusModel(name: 'Neumor UI', icon: Icons.add_circle),
 ];
 
 class HomeScreen extends StatefulWidget {
@@ -87,6 +94,16 @@ class HomeScreenState extends State<StatefulWidget> {
       Navigator.push(context, MaterialPageRoute(builder: (context) => DrawerScreenThree()));
     } else if (index == 3) {
       Navigator.push(context, MaterialPageRoute(builder: (context) => DrawerScreenFour()));
+    } else if (index == 4) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => FaceDetectionScreen()));
+    } else if (index == 5) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => BluetoothHomeScreen()));
+    } else if (index == 6) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => VoiceRecognizerWithPython()));
+    } else if (index == 7) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => RangeSliderScreen()));
+    } else if (index == 8) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => NeumorUiScreen()));
     }
   }
 }

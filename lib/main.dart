@@ -1,9 +1,14 @@
+import 'package:api_sample_flutter/ui/home_screen.dart';
 import 'package:api_sample_flutter/ui/login_screen.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+List<CameraDescription> cameras = [];
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  cameras = await availableCameras();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runApp(const MyApp());
@@ -21,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginScreen(),
+      home: HomeScreen(),
     );
   }
 }
