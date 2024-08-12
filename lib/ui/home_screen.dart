@@ -5,11 +5,13 @@ import 'package:api_sample_flutter/ui/3dUI/neumor_ui_screen.dart';
 import 'package:api_sample_flutter/ui/ai/face_detection_screen.dart';
 import 'package:api_sample_flutter/ui/ar/augmented_reality_screen.dart';
 import 'package:api_sample_flutter/ui/bluetoothConnection/bluetooth_home_screen.dart';
+import 'package:api_sample_flutter/ui/camera/custom_ai_camera.dart';
 import 'package:api_sample_flutter/ui/components/range_slider_screen.dart';
 import 'package:api_sample_flutter/ui/drawersUI/drawer_screen_four.dart';
 import 'package:api_sample_flutter/ui/drawersUI/drawer_screen_one.dart';
 import 'package:api_sample_flutter/ui/drawersUI/drawer_screen_three.dart';
 import 'package:api_sample_flutter/ui/drawersUI/drawer_screen_two.dart';
+import 'package:api_sample_flutter/ui/graphQl/graph_ql_api_call_screen.dart';
 import 'package:api_sample_flutter/ui/voiceWIthPython/voice_recognizer_with_python.dart';
 import 'package:flutter/material.dart';
 
@@ -23,6 +25,8 @@ const List<HomeMenusModel> choiceMenus = <HomeMenusModel>[
   HomeMenusModel(name: 'Album', icon: Icons.photo_album),
   HomeMenusModel(name: 'WiFi', icon: Icons.wifi),
   HomeMenusModel(name: 'Neumor UI', icon: Icons.add_circle),
+  HomeMenusModel(name: 'AI Filters Camera', icon: Icons.add_circle),
+  HomeMenusModel(name: 'GraphQl API Call', icon: Icons.graphic_eq_rounded),
 ];
 
 class HomeScreen extends StatefulWidget {
@@ -104,6 +108,10 @@ class HomeScreenState extends State<StatefulWidget> {
       Navigator.push(context, MaterialPageRoute(builder: (context) => RangeSliderScreen()));
     } else if (index == 8) {
       Navigator.push(context, MaterialPageRoute(builder: (context) => NeumorUiScreen()));
+    } else if (index == 9) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => CustomAICamera()));
+    } else if (index == 10) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => GraphQlAPICallScreen()));
     }
   }
 }
