@@ -65,11 +65,7 @@ class GraphQlAPICallScreenState extends State<GraphQlAPICallScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print(client.value.toString());
     return Scaffold(
-      body: GraphQLProvider(
-        client: client,
-      ),
     );
   }
 }
