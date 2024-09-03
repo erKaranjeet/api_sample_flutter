@@ -71,6 +71,7 @@ dependencies:
   tflite_flutter: ^0.10.4
   tflite_flutter_helper_plus: ^0.0.2
   graphql_flutter: ^5.2.0-beta.6
+  syncfusion_flutter_core: ^25.2.7
 
 
 dev_dependencies:
@@ -111,7 +112,6 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
-    - assets/model.tflite
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

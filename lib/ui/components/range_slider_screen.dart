@@ -1,8 +1,12 @@
+import 'dart:core';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import 'package:syncfusion_flutter_charts/charts.dart' hide LabelPlacement;
+import 'package:syncfusion_flutter_core/theme.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 
 class RangeSliderScreen extends StatefulWidget {
@@ -27,6 +31,8 @@ class RangeSliderScreenState extends State<RangeSliderScreen> {
   final SfRangeValues _dateValues =
       SfRangeValues(DateTime(2005, 01, 01), DateTime(2008, 01, 01));
 
+  int selectedValue = 0;
+
   @override
   void initState() {
     super.initState();
@@ -38,8 +44,9 @@ class RangeSliderScreenState extends State<RangeSliderScreen> {
       body: Container(
         margin: EdgeInsets.zero,
         padding: EdgeInsets.zero,
-        child: Stack(
+        child: Column(
           children: <Widget>[
+            50.heightBox,
             Padding(
               padding: const EdgeInsets.only(top: 10),
               child: Center(
@@ -71,6 +78,50 @@ class RangeSliderScreenState extends State<RangeSliderScreen> {
                       ],
                     ),
                     height: 200,
+                  ),
+                ),
+              ),
+            ),
+            100.heightBox,
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Center(
+                // ignore: missing_required_param
+                child: SfSliderTheme(
+                  data: SfSliderThemeData(
+                    tooltipBackgroundColor: Color(0xFF001132),
+                  ),
+                  child: SfSlider(
+                    value: selectedValue,
+                    min: 0,
+                    max: 500,
+                    activeColor: Color(0xFF001132),
+                    inactiveColor: Color(0xFFF0FDF1),
+                    labelPlacement: LabelPlacement.betweenTicks,
+                    interval: 100,
+                    showTicks: false,
+                    showLabels: false,
+                    enableTooltip: true,
+                    tooltipShape: const SfPaddleTooltipShape(),
+                    shouldAlwaysShowTooltip: true,
+                    tooltipTextFormatterCallback:
+                        (dynamic actualValue, String formattedText) {
+                      int vals = double.tryParse(formattedText)!.round();
+                      if (vals != null) {
+                        return '\$$vals';
+                      } else {
+                        return '\$$formattedText';
+                      }
+                    },
+                    onChanged: (value) {
+                     print('Slider Value $value');
+                     setState(() {
+                       int vals = double.tryParse(value.toString())!.round();
+                       if (vals != null) {
+                         selectedValue = vals;
+                       }
+                     });
+                    },
                   ),
                 ),
               ),
