@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:http/http.dart' as http;
 
 class GraphQlAPICallScreen extends StatefulWidget {
 
@@ -61,6 +64,53 @@ class GraphQlAPICallScreenState extends State<GraphQlAPICallScreen> {
       //queryResult.context.entry<HttpLinkResponseContext>()?.statusCode to get status code of response
       print(queryResult.data!['characters']['results']);
     });
+  }
+
+  Future<void> uploadAPICall(String filePath, String fileName) async {
+    var uri = Uri.parse('https://your-graphql-endpoint.com/graphql');
+
+    // Create a MultipartRequest
+    var request = http.MultipartRequest('POST', uri);
+
+    // Add the GraphQL mutation and variables
+    String graphqlMutation = '''
+    mutation UploadFile(\$file: Upload!) {
+      uploadFile(file: \$file) {
+        success
+        message
+      }
+    }
+  ''';
+
+    var graphqlPayload = {
+      'query': graphqlMutation,
+      'variables': {
+        'file': null,  // The file will be replaced by the multipart form data
+      },
+    };
+
+
+    // Add the file to the request
+    request.files.add(await http.MultipartFile.fromPath('file', filePath, filename: fileName));
+
+    // Add the GraphQL payload to the request as 'operations'
+    request.fields['operations'] = jsonEncode(graphqlPayload);
+
+    // Map file name to the GraphQL variable name ($file)
+    request.fields['map'] = jsonEncode({
+      '0': ['variables.file'],
+    });
+
+    // Send the multipart request
+    var response = await request.send();
+
+    // Handle the response
+    if (response.statusCode == 200) {
+      var responseBody = await response.stream.bytesToString();
+      print('Response: $responseBody');
+    } else {
+      print('Upload failed with status code: ${response.statusCode}');
+    }
   }
 
   @override

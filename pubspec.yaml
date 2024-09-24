@@ -65,7 +65,7 @@ dependencies:
   veriff_flutter: ^3.9.0
   syncfusion_flutter_sliders: ^25.1.40
   syncfusion_flutter_charts: ^25.1.40
-  http: ^1.2.1
+  http: ^1.2.2
   file_picker: ^8.0.3
   velocity_x: ^4.2.1
   tflite_flutter: ^0.10.4

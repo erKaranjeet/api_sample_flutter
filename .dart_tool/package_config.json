@@ -543,7 +543,7 @@
     },
     {
       "name": "http",
-      "rootUri": "file:///C:/Users/Aspire/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.2.1",
+      "rootUri": "file:///C:/Users/Aspire/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.2.2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
@@ -1046,7 +1046,7 @@
       "languageVersion": "2.15"
     }
   ],
-  "generated": "2024-09-03T13:44:26.034649Z",
+  "generated": "2024-09-24T07:43:49.307351Z",
   "generator": "pub",
   "generatorVersion": "3.4.3",
   "flutterRoot": "file:///C:/flutter",
